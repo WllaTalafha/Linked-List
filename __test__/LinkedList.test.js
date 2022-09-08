@@ -15,7 +15,7 @@ describe('testing the LinkedList',()=>{
 })
 
 describe('testing the LinkedList insert method',()=>{
-    it('testing insert if ll is empty',()=>{
+    it('testing insert method if ll is empty',()=>{
         
         const ll = new LinkedList();
 
@@ -24,9 +24,7 @@ describe('testing the LinkedList insert method',()=>{
         expect(ll.head.next).toBeNull;
                
     })
-});
 
-describe('testing the LinkedList insert method',()=>{
     it('testing insert method if ll is not empty',()=>{
         
         const ll = new LinkedList();
@@ -40,4 +38,31 @@ describe('testing the LinkedList insert method',()=>{
         expect(ll.head.next.next.next).toBeNull;
                
     })
-});
+})
+
+
+describe('testing the LinkedList append method',()=>{
+    it('testing append method if ll is empty',()=>{
+        
+        const ll = new LinkedList();
+
+        ll.append('a');
+        expect(ll.head.value).toEqual('a');
+        expect(ll.head.next).toBeNull();
+               
+    })
+
+    it('testing append method if ll is not empty',()=>{
+        
+        const ll = new LinkedList();
+
+        ll.append('a');
+        ll.append('b');
+        ll.append('c');
+        expect(ll.head.value).toEqual('a');
+        expect(ll.head.next.value).toEqual('b');
+        expect(ll.head.next.next.value).toEqual('c');
+        expect(ll.head.next.next.next).toBeNull();
+               
+    })
+})

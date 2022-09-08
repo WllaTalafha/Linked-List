@@ -34,5 +34,31 @@ class LinkedList {
             this.head = node;
         }
     }
+
+    delete() {
+        if(this.head){
+           let start=this.head;
+           let counter = 1;
+        while(start.next){
+            start=start.next;
+            counter=counter+1;
+    }  
+    
+    console.log(counter);
+    let middle = Math.floor(counter/2)
+    console.log(middle);
+
+    let origin=this.head;
+
+    for (let i=1 ; i<middle ; i++){
+        origin=origin.next;
+    }
+    console.log(origin);
+    
+    origin.next=origin.next.next;
+
+      }
+          
+    }
 }
 module.exports = LinkedList;

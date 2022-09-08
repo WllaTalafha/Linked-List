@@ -66,3 +66,20 @@ describe('testing the LinkedList append method',()=>{
                
     })
 })
+
+describe('testing the LinkedList delete method',()=>{
+    it('testing delete method ',()=>{
+        
+        const ll = new LinkedList();
+
+        ll.append('a');
+        ll.append('b');
+        ll.append('c');
+        ll.delete();
+        expect(ll.head.value).toEqual('a');
+        expect(ll.head.next.value).toEqual('c');
+        expect(ll.head.next.next).toBeNull();
+               
+    })
+
+ })

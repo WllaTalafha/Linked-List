@@ -60,5 +60,21 @@ class LinkedList {
       }
           
     }
+
+    insertTo(newNodeValue,position) { 
+        let origin= this.head;
+        let counter=1;
+        while(origin.next){
+            if (counter==position-1){
+                let newNode = new Node(newNodeValue);                
+                newNode.next = origin.next;
+                origin.next=newNode;
+            }
+
+            origin=origin.next;
+            counter++;
+           
+        }
+    }
 }
 module.exports = LinkedList;
